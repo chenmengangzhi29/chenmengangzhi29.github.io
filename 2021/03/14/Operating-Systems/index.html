@@ -16,7 +16,7 @@
 <meta property="og:description" content="1.引论1.1什么是操作系统？1、用户角度上，操作系统是一个控制软件2、管理应用程序3、为应用程序提供服务4、杀死应用程序5、资源管理6、管理外设、分配资源 操作系统将CPU、磁盘、内存抽象成进程、文件、地址空间。操作系统架层次结构：硬件之上，应用程序之下。应用软件：办公软件、视频播放软件操作系统位于应用软件之下，为应用软件提供服务支撑 操作系统层面的软件有两个对外的接口，一个是面向应用程序称为s">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-14T09:35:40.000Z">
-<meta property="article:modified_time" content="2021-03-16T04:25:27.444Z">
+<meta property="article:modified_time" content="2021-03-16T04:28:33.380Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -197,7 +197,10 @@
 <h4 id="2-2-3系统调用"><a href="#2-2-3系统调用" class="headerlink" title="2.2.3系统调用"></a>2.2.3系统调用</h4><p>API是用于程序对系统调用的接口<br>程序访问主要是通过高层次的API接口而不是直接进行系统调用<br>Win32 API用于Windows<br>POSIX API用于POSIX-based systems(包括UNIX,LINUX,Max OS X的所有版本）<br>Java API用于JAVA虚拟机（JVM）</p>
 <p>通常情况下，与每个系统调用相关的序号，系统调用接口根据这些序号来维护表的索引<br>系统调用接口调用内核态中预期的系统调用，并返回系统调用的状态和其他任何返回值<br>用户不需要知道系统调用是如何实现的，只需要获取API和了解操作新系统将什么作为返回结果，操作系统接口的细节大部分都隐藏在API中，通过运行程序支持的库来管理（用包含编译器的库来创建函数集）</p>
 <p><strong>什么是用户态和内核态？</strong><br>用户态是应用程序在执行的过程中CPU所执行的特权级的状态，特权级特别低，不能直接访问某些特殊的机器指令和直接访问I/O<br>内核态是操作系统运行过程中CPU所处的状态，这个状态下操作系统可以执行任何一条指令，包括特权指令和I/O指令</p>
-<p><strong>跨越操作系统边界的开销是什么？</strong><br>- 在执行时间上的开销超过程序调用</p>
+<p><strong>跨越操作系统边界的开销是什么？</strong></p>
+<ul>
+<li>在执行时间上的开销超过程序调用</li>
+</ul>
 
       
 
