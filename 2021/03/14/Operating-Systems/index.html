@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Operating Systems | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.引论1.1什么是操作系统？1、用户角度上，操作系统是一个控制软件2、管理应用程序3、为应用程序提供服务4、杀死应用程序5、资源管理6、管理外设、分配资源 操作系统将CPU、磁盘、内存抽象成进程、文件、地址空间。操作系统架层次结构：硬件之上，应用程序之下。应用软件：办公软件、视频播放软件操作系统位于应用软件之下，为应用软件提供服务支撑 操作系统层面的软件有两个对外的接口，一个是面向应用程序称为s">
+  <meta name="description" content="一.概述1.1什么是操作系统？1、用户角度上，操作系统是一个控制软件2、管理应用程序3、为应用程序提供服务4、杀死应用程序5、资源管理6、管理外设、分配资源 操作系统将CPU、磁盘、内存抽象成进程、文件、地址空间。操作系统架层次结构：硬件之上，应用程序之下。应用软件：办公软件、视频播放软件操作系统位于应用软件之下，为应用软件提供服务支撑 操作系统层面的软件有两个对外的接口，一个是面向应用程序称为s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Operating Systems">
 <meta property="og:url" content="http://example.com/2021/03/14/Operating-Systems/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.引论1.1什么是操作系统？1、用户角度上，操作系统是一个控制软件2、管理应用程序3、为应用程序提供服务4、杀死应用程序5、资源管理6、管理外设、分配资源 操作系统将CPU、磁盘、内存抽象成进程、文件、地址空间。操作系统架层次结构：硬件之上，应用程序之下。应用软件：办公软件、视频播放软件操作系统位于应用软件之下，为应用软件提供服务支撑 操作系统层面的软件有两个对外的接口，一个是面向应用程序称为s">
+<meta property="og:description" content="一.概述1.1什么是操作系统？1、用户角度上，操作系统是一个控制软件2、管理应用程序3、为应用程序提供服务4、杀死应用程序5、资源管理6、管理外设、分配资源 操作系统将CPU、磁盘、内存抽象成进程、文件、地址空间。操作系统架层次结构：硬件之上，应用程序之下。应用软件：办公软件、视频播放软件操作系统位于应用软件之下，为应用软件提供服务支撑 操作系统层面的软件有两个对外的接口，一个是面向应用程序称为s">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-14T09:35:40.000Z">
-<meta property="article:modified_time" content="2021-03-16T04:28:33.380Z">
+<meta property="article:modified_time" content="2021-03-16T09:28:49.053Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -174,7 +174,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-引论"><a href="#1-引论" class="headerlink" title="1.引论"></a>1.引论</h2><h3 id="1-1什么是操作系统？"><a href="#1-1什么是操作系统？" class="headerlink" title="1.1什么是操作系统？"></a>1.1什么是操作系统？</h3><p>1、用户角度上，操作系统是一个控制软件<br>2、管理应用程序<br>3、为应用程序提供服务<br>4、杀死应用程序<br>5、资源管理<br>6、管理外设、分配资源</p>
+        <h2 id="一-概述"><a href="#一-概述" class="headerlink" title="一.概述"></a>一.概述</h2><h3 id="1-1什么是操作系统？"><a href="#1-1什么是操作系统？" class="headerlink" title="1.1什么是操作系统？"></a>1.1什么是操作系统？</h3><p>1、用户角度上，操作系统是一个控制软件<br>2、管理应用程序<br>3、为应用程序提供服务<br>4、杀死应用程序<br>5、资源管理<br>6、管理外设、分配资源</p>
 <p>操作系统将CPU、磁盘、内存抽象成进程、文件、地址空间。<br>操作系统架层次结构：硬件之上，应用程序之下。<br>应用软件：办公软件、视频播放软件<br>操作系统位于应用软件之下，为应用软件提供服务支撑</p>
 <p>操作系统层面的软件有两个对外的接口，一个是面向应用程序称为shell的接口，另一个是计算机内部的资源称为kernel。Linux、Windows、Android的界面属于外壳（Shell),而不是内核（kernel)。Kernel是研究重点，在Shell之下。</p>
 <p>Kernel-操作系统内部组件，包括：CPU调度器、物理内存管理、虚拟内存管理、文件系统管理、中断处理与设备驱动</p>
@@ -185,7 +185,7 @@
 <p>操作系统需要权衡：空间与时间、性能和可预测性、公平和性能<br>硬件方面，操作系统需要：良好的硬件管理、合理的资源分配</p>
 <h3 id="1-3操作系统实例"><a href="#1-3操作系统实例" class="headerlink" title="1.3操作系统实例"></a>1.3操作系统实例</h3><p>UNIX、Linux、Windows、</p>
 <h3 id="1-4操作系统结构"><a href="#1-4操作系统结构" class="headerlink" title="1.4操作系统结构"></a>1.4操作系统结构</h3><p>VMM（虚拟机监视器）<br>无虚拟机：单操作系统拥有所有硬件资源<br>有虚拟机：多操作系统共享硬件资源<br>VMM将单独的机器接口转换成很多的幻象。每个这些接口（虚拟机）是一个原始计算机系统的有效副本，并完成所有的处理器指令。</p>
-<h3 id="2-1操作系统的启动"><a href="#2-1操作系统的启动" class="headerlink" title="2.1操作系统的启动"></a>2.1操作系统的启动</h3><p>基础三部分：CPU、I/O、内存<br>DISK：存放OS<br>BIOS:基本I/O处理系统<br>Bootloader:放在硬盘的第一个主引导扇区，加载OS，将OS从硬盘加载到内存，CPU才能执行操作系统<br>CS:IP = 0xf000:fff0(合并生成内存地址）（CS：段寄存器；IP：指令寄存器）<br>BIOS从上面地址开始执行完成一系列操作：<br>POST（加电自检）：寻找显卡和执行BIOS</p>
+<h2 id="二、操作系统基础操作"><a href="#二、操作系统基础操作" class="headerlink" title="二、操作系统基础操作"></a>二、操作系统基础操作</h2><h3 id="2-1操作系统的启动"><a href="#2-1操作系统的启动" class="headerlink" title="2.1操作系统的启动"></a>2.1操作系统的启动</h3><p>基础三部分：CPU、I/O、内存<br>DISK：存放OS<br>BIOS:基本I/O处理系统<br>Bootloader:放在硬盘的第一个主引导扇区，加载OS，将OS从硬盘加载到内存，CPU才能执行操作系统<br>CS:IP = 0xf000:fff0(合并生成内存地址）（CS：段寄存器；IP：指令寄存器）<br>BIOS从上面地址开始执行完成一系列操作：<br>POST（加电自检）：寻找显卡和执行BIOS</p>
 <p><strong>启动过程</strong><br>BIOS<br>将Bootloader从磁盘的引导扇区（512字节）加载到0x7c00<br>跳转到CS:IP=0000:7c00<br>Bootloader<br>将操作系统的代码和数据从硬盘加载到内存中<br>跳转到操作系统的起始地址</p>
 <p><strong>操作系统与设备和程序交互</strong><br><strong>定义</strong><br>系统调用（来源于应用程序）：应用程序主动向操作系统发出服务请求<br>异常（来源于不良的应用程序）：非法指令或者其他坏的处理状态（如：内存出错）<br>中断（来源于外设）：来自不同的硬件设备的计时器和网络的中断</p>
 <p><strong>为何要通过操作系统</strong><br>在计算机运行中，内核是被信任的第三方，安全<br>只有内核可以执行特权指令<br>为了方便应用程序</p>
@@ -200,6 +200,47 @@
 <p><strong>跨越操作系统边界的开销是什么？</strong></p>
 <ul>
 <li>在执行时间上的开销超过程序调用</li>
+<li>开销：<ul>
+<li>建立中断/异常/系统调用号与对应服务<br>例程映射关系的初始化开销</li>
+<li>建立内核堆栈</li>
+<li>验证参数</li>
+<li>内核态映射到用户态的地址空间<br>更新页面映射权限</li>
+<li>内核态独立地址空间<br>TLB <h2 id="三、连续式内存分配"><a href="#三、连续式内存分配" class="headerlink" title="三、连续式内存分配"></a>三、连续式内存分配</h2><h3 id="3-1计算机体系结构及内存分层体系"><a href="#3-1计算机体系结构及内存分层体系" class="headerlink" title="3.1计算机体系结构及内存分层体系"></a>3.1计算机体系结构及内存分层体系</h3></li>
+</ul>
+</li>
+</ul>
+<p><strong>计算机基本硬件结构</strong><br>CPU：完成对程序、软件执行的控制<br>内存：放置程序执行的代码和数组<br>(I/O)设备:硬盘、键盘和鼠标等</p>
+<p><strong>操作系统要完成什么事情？</strong></p>
+<ul>
+<li>抽象<ul>
+<li>逻辑地址空间</li>
+</ul>
+</li>
+<li>保护<ul>
+<li>独立地址空间</li>
+</ul>
+</li>
+<li>共享<ul>
+<li>访问相同内存</li>
+</ul>
+</li>
+<li>虚拟化 <ul>
+<li>更多的地址空间</li>
+</ul>
+</li>
+</ul>
+<p><strong>在操作系统中管理内存的不同方法</strong></p>
+<ul>
+<li>程序重定位</li>
+<li>分段</li>
+<li>分页</li>
+<li>虚拟内存</li>
+<li>按需分页虚拟内存</li>
+</ul>
+<p><strong>实现高度依赖于硬件</strong></p>
+<ul>
+<li>必须知道内存架构</li>
+<li>MMU（内存管理单元）：硬件组件负责处理CPU的内存访问请求<h3 id="3-2地址空间与地址生成"><a href="#3-2地址空间与地址生成" class="headerlink" title="3.2地址空间与地址生成"></a>3.2地址空间与地址生成</h3></li>
 </ul>
 
       
