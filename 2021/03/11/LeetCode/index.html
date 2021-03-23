@@ -16,7 +16,7 @@
 <meta property="og:description" content="第2章 贪心算法2.1 算法解释顾名思义，贪心算法采用贪心的策略，保证每次操作都是局部最优的，从而使最后得到的结果是全局最优的。 2.2 分配问题455.Assign Cookies(Easy)题目描述&amp;ensp;&amp;ensp;假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。&amp;ensp;&amp;ensp;对每个孩子i，都有一个胃口值g[i]，这是能让孩子们满足胃口的饼">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-11T11:17:02.000Z">
-<meta property="article:modified_time" content="2021-03-22T16:40:48.038Z">
+<meta property="article:modified_time" content="2021-03-23T15:24:08.148Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -362,7 +362,53 @@ public:
     &#125;
 &#125;;
 </code></pre>
-<h3 id="122-Best-Time-to-Buy-and-Sell-Stock-II-Easy"><a href="#122-Best-Time-to-Buy-and-Sell-Stock-II-Easy" class="headerlink" title="122.Best Time to Buy and Sell Stock II(Easy)"></a><font orange>122.Best Time to Buy and Sell Stock II(Easy)</font></h3><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
+<h3 id="122-Best-Time-to-Buy-and-Sell-Stock-II-Easy"><a href="#122-Best-Time-to-Buy-and-Sell-Stock-II-Easy" class="headerlink" title="122.Best Time to Buy and Sell Stock II(Easy)"></a><font orange>122.Best Time to Buy and Sell Stock II(Easy)</font></h3><h3 id="题目描述-6"><a href="#题目描述-6" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个数组，它的第i个元素是一支给定股票第i天的价格。<br>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。<br>注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+<h3 id="示例1：-3"><a href="#示例1：-3" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
+<p>输入：[7,1,5,3,6,4]<br>输出：7<br>解释：在第2天（股票价格=1）的时候买入，在第3天（股票价格=5）的时候卖出，这笔交易所能获得利润=5-1=4。<br>随后，在第4天（股票价格=3）的时候买入，在第5天（股票价格=6）的时候卖出，这笔交易所能获得利润=6-3=3。</p>
+</blockquote>
+<h3 id="示例2：-2"><a href="#示例2：-2" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
+<p>输入：[1,2,3,4,5]<br>输出：4<br>解释：在第1天（股票价格=1）的时候买入，在第5天（股票价格=5）的时候卖出，这笔交易所能获得利润=5-1=4.<br>注意你不能在第1天和第2天接连购买股票，之后再将它们卖出。<br>因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</p>
+</blockquote>
+<h3 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h3><blockquote>
+<p>输入：[7,6,4,3,1]<br>输出：0<br>解释：在这种情况下，没有交易完成，所有最大利润为0.</p>
+</blockquote>
+<h3 id="题解-6"><a href="#题解-6" class="headerlink" title="题解"></a>题解</h3><p>&ensp;&ensp;如果第一天的价格低于第二天的价格，那么就在第一天买入，第二天卖出，将获得的利润叠加起来，接着对比第二天和第三天，直到最后，这样就能获取最大利润。</p>
+<pre><code>class Solution&#123;
+public:
+    int maxProfit(vector&lt;int&gt;&amp; prices)&#123;
+        int ans = 0;
+        int n = prices.size();
+        for(int i = 1; i &lt; n; ++i)&#123;
+            ans += max(0,prices[i] - prices[i-1]);
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
+<p><strong>进阶难度</strong></p>
+<h3 id="406-Queue-Reconstruction-by-Height-Medium"><a href="#406-Queue-Reconstruction-by-Height-Medium" class="headerlink" title="406.Queue Reconstruction by Height(Medium)"></a><font orange>406.Queue Reconstruction by Height(Medium)</font></h3><h3 id="题目描述-7"><a href="#题目描述-7" class="headerlink" title="题目描述"></a>题目描述</h3><p>假设有打乱顺序的一群人站成一个队列，数组<kbd>people</kbd>表示队列中一些人的属性（不一定按顺序）。每个<kbd>people[i] = [hi,ki]</kbd>表示第<kbd>i</kbd>个人的身高为<kbd>hi</kbd>,前面正好有<kbd>ki</kbd>个身高大于或等于<kbd>hi</kbd>的人。<br>请你重新构造并返回输入数组<kbd>people</kbd>所表示的队列。返回的队列应该格式化为数组<kbd>queue</kbd>,其中<kbd>queue[j] = [hj,kj]</kbd>是队列中第<kbd>j</kbd>个人的属性（<kbd>queue[0]</kbd>是排在队列前面的人）。</p>
+<h3 id="示例1：-4"><a href="#示例1：-4" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
+<p>输入：people = [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]<br>输出：[[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]<br>解释：<br>编号为0的人身高为5，没有身高更高或者相同的人排在他前面。<br>编号为1的人身高为7，没有身高更高或者相同的人排在他前面<br>编号为2的人身高为5，有2个身高更高或者相同的人排在他前面，即编号为0和1的人。<br>编号为3的人身高为6，有1个身高更高或者相同的人排在他前面，即编号为1的人。<br>编号为4的人身高为4，有4个身高更高或者相同的人排在他前面，即编号为0、1、2、3的人。<br>编号为5的人身高为7，有1个身高更高或者相同的人排在他前面，即编号为1的人。<br>因此[[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]是重新构造后的队列。</p>
+</blockquote>
+<h3 id="示例2：-3"><a href="#示例2：-3" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
+<p>输入：people=[[6,0],[5,0],[4,0],[3,2],[2,2],[1,4]]<br>输出：[[4,0],[5,0],[2,2],[3,2],[1,4],[6,0]]</p>
+</blockquote>
+<h3 id="题解-7"><a href="#题解-7" class="headerlink" title="题解"></a>题解</h3><p>&ensp;&ensp;先将队列按照身高从大到小排序，这样插入第i个人时前面i-1个人对他有影响，后面的人对他没有影响，所以插入第i个人时根据他的k值选择他插入的位置即可。当身高相同时，k值大的，他要考虑身高相同的人，所以k值大的应该后插入。因此先按照升高降序排列，身高相同时再按照k值升序排列。然后依次将排列后的队列插入就行。</p>
+<pre><code>class Solution&#123;
+public:
+    vector&lt;vector&lt;int&gt;&gt; reconstructQueue(vector&lt;vector&lt;int&gt;&gt;&amp;people)&#123;
+        sort(people.begin(),people.end(),[](const vector&lt;int&gt; &amp;a, const vector&lt;int&gt; &amp;b)&#123;
+            return a[0] &gt; b[0] || (a[0] == b[0] &amp;&amp; a[1] &lt; b[1]);
+        &#125;);
+        vector&lt;vector&lt;int&gt;&gt; queue;
+        for(const vector&lt;int&gt; &amp;person:people)&#123;
+            queue.insert(queue.begin() + person[1], person);
+        &#125;
+        return queue;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="665-Non-decreasing-Array-Easy"><a href="#665-Non-decreasing-Array-Easy" class="headerlink" title="665.Non-decreasing Array(Easy)"></a><font orange>665.Non-decreasing Array(Easy)</font></h3><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
 
       
 
