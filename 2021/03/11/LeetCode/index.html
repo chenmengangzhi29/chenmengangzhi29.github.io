@@ -16,7 +16,7 @@
 <meta property="og:description" content="第2章 贪心算法2.1 算法解释顾名思义，贪心算法采用贪心的策略，保证每次操作都是局部最优的，从而使最后得到的结果是全局最优的。 2.2 分配问题455.Assign Cookies(Easy)题目描述&amp;ensp;&amp;ensp;假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。&amp;ensp;&amp;ensp;对每个孩子i，都有一个胃口值g[i]，这是能让孩子们满足胃口的饼">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-11T11:17:02.000Z">
-<meta property="article:modified_time" content="2021-03-19T15:24:17.020Z">
+<meta property="article:modified_time" content="2021-03-22T16:40:48.038Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -295,7 +295,74 @@ public:
     &#125;
 &#125;;
 </code></pre>
-<h3 id="452-Minimum-Number-of-Arrows-to-Burst-Balloons-Medium"><a href="#452-Minimum-Number-of-Arrows-to-Burst-Balloons-Medium" class="headerlink" title="452.Minimum Number of Arrows to Burst Balloons(Medium)"></a><font orange>452.Minimum Number of Arrows to Burst Balloons(Medium)</font></h3><h3 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h3><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
+<h3 id="452-Minimum-Number-of-Arrows-to-Burst-Balloons-Medium"><a href="#452-Minimum-Number-of-Arrows-to-Burst-Balloons-Medium" class="headerlink" title="452.Minimum Number of Arrows to Burst Balloons(Medium)"></a><font orange>452.Minimum Number of Arrows to Burst Balloons(Medium)</font></h3><h3 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h3><p>在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。</p>
+<p>一支弓箭可以沿着x轴从不同点完全垂直地射出。在坐标x处射出一支箭，若有一个气球的直径的开始和结束坐标为<kbd>x</kbd><kbd>start</kbd>,<kbd>x</kbd><kbd>end</kbd>,且满足<kbd>x</kbd><kbd>start</kbd>&lt;=<kbd>x</kbd>&lt;=<kbd>x</kbd><kbd>end</kbd>,则该气球会被引爆。可以射出的弓箭的数量没有限制。弓箭一旦被射出之后，可以无限地前进。我们想找到使得所有气球全部被引爆，所需的弓箭的最小数量。</p>
+<p>给你一个数组<kbd>points</kbd>,其中<kbd>points[i] = [xstart,xend]</kbd>,返回引爆所有气球所必须射出的最小弓箭数。</p>
+<h3 id="示例1：-2"><a href="#示例1：-2" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
+<p>输入：points = [[10,16],[2,8],[1,6],[7,12]]<br>输出：2<br>解释：对于该样例，x=6可以射爆[2,8],[1,6]两个气球，以及x=11射爆另外两个气球</p>
+</blockquote>
+<h3 id="示例2：-1"><a href="#示例2：-1" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
+<p>输入：points = [[1,2],[3,4],[5,6],[7,8]]<br>输出:4</p>
+</blockquote>
+<h3 id="示例3"><a href="#示例3" class="headerlink" title="示例3:"></a>示例3:</h3><blockquote>
+<p>输入：points = [[1,2],[2,3],[3,4],[4,5]]<br>输出：2</p>
+</blockquote>
+<h3 id="示例4："><a href="#示例4：" class="headerlink" title="示例4："></a>示例4：</h3><blockquote>
+<p>输入：points = [[1,2]]<br>输出：1</p>
+</blockquote>
+<h3 id="示例5："><a href="#示例5：" class="headerlink" title="示例5："></a>示例5：</h3><blockquote>
+<p>输入：points = [[2,3],[2,3]]<br>输出：1</p>
+</blockquote>
+<h3 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h3><p>&ensp;&ensp;为了使射出的箭尽可能地射爆更多的气球，可以将气球按照结束坐标先排好序，第一支射出的箭射中第一个气球的结束坐标上，这样可以保证在射爆第一个气球的情况下射爆最多的气球，然后找到起始坐标大于第一个气球结束坐标的气球，继续射出下一箭在该气球的结束坐标上，以此循环，直到射爆所有气球。</p>
+<pre><code>class Solution&#123;
+public:
+    int findMinArrowShots(vector&lt;vector&lt;int&gt;&gt;&amp; points)&#123;
+        int size = points.size();
+        if(size == 0)&#123;
+            return 0;
+        &#125;
+        sort(points.begin(),points.end(),[](const vector&lt;int&gt; &amp;a, const vector&lt;int&gt; &amp;b)&#123;
+            return a[1] &lt; b[1];
+        &#125;);
+        int count = 0;
+        for(int j = 0, i = 1; i &lt; size; i++)&#123;
+            if(points[i][0] &gt; points[j][1])&#123;
+                count++;
+                j = i;
+            &#125;
+        &#125;
+        count++;
+        return count;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="763-Partition-Labels-Medium"><a href="#763-Partition-Labels-Medium" class="headerlink" title="763.Partition Labels(Medium)"></a><font orange>763.Partition Labels(Medium)</font></h3><h3 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h3><p>字符串<kbd>S</kbd>由小写字母组成。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。返回一个表示每个字符串片段的长度的列表。</p>
+<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><blockquote>
+<p>输入：S = “ababcbacadefegdehijhklij”<br>输出：[9,7,8]<br>解释：<br>划分结果为”ababcbaca”,”defegde”,”hijhklij”。<br>每个字母最多出现在一个片段中。<br>像”ababcbacadefegde”,”hijhklij”的划分是错误的，因为划分的片段数较少。</p>
+</blockquote>
+<h3 id="题解-5"><a href="#题解-5" class="headerlink" title="题解"></a>题解</h3><p>&ensp;&ensp;先遍历一遍记录每个字母的最后出现的下标，第二次遍历时每到一个字母就用其下标与已访问到的所有字母的最大结束下标相比较，如果大于最大结束下标，就更新它。如果该下标与最大结束下标相等就片段结束，开始下一段。最后返回片段序列。</p>
+<pre><code>class Solution&#123;
+public:
+    vector&lt;int&gt; partitionLabels(string S)&#123;
+        int len = S.length();//字符串长度
+        int Last[26];
+        for(int i = 0; i &lt; len; i++)&#123;
+            Last[S[i]-&#39;a&#39;] = i;//记录字母最后出现的位置
+        &#125;
+        vector&lt;int&gt; count;//字符串片段长度数组
+        int end = 0, start = 0;//片段的结束
+        for(int i = 0; i &lt; len; i++)&#123;
+            end = max(end, Last[S[i] - &#39;a&#39;]);
+            if(i == end)&#123;
+                count.push_back(end - start + 1);
+                start = end + 1;
+            &#125;
+        &#125;
+        return count;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="122-Best-Time-to-Buy-and-Sell-Stock-II-Easy"><a href="#122-Best-Time-to-Buy-and-Sell-Stock-II-Easy" class="headerlink" title="122.Best Time to Buy and Sell Stock II(Easy)"></a><font orange>122.Best Time to Buy and Sell Stock II(Easy)</font></h3><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
 
       
 
