@@ -261,7 +261,12 @@
 <p><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%88%A4%E6%96%AD%E6%BA%A2%E5%87%BA%E6%B3%951.jpg"></p>
 <p><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%88%A4%E6%96%AD%E6%BA%A2%E5%87%BA%E6%B3%952.png"></p>
 <p><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E6%BA%A2%E5%87%BA%E5%88%A4%E6%96%AD%E6%B3%953.jpg"><br><strong>符号扩展</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E7%AC%A6%E5%8F%B7%E6%89%A9%E5%B1%95.jpg"></p>
-<h4 id="2-2-5原码的乘法运算"><a href="#2-2-5原码的乘法运算" class="headerlink" title="2.2.5原码的乘法运算"></a>2.2.5原码的乘法运算</h4>
+<h4 id="2-2-5-1原码的乘法运算"><a href="#2-2-5-1原码的乘法运算" class="headerlink" title="2.2.5-1原码的乘法运算"></a>2.2.5-1原码的乘法运算</h4><p><strong>二进制乘法</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B9%98%E6%B3%95.jpg"><br><strong>原码一位乘法</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97%E5%99%A8.jpg"><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%8E%9F%E7%A0%81%E4%B8%80%E4%BD%8D%E4%B9%98%E6%B3%95.jpg"></p>
+<p>手算<br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%8E%9F%E7%A0%81%E4%B8%80%E4%BD%8D%E4%B9%98%E6%B3%95%EF%BC%88%E6%89%8B%E7%AE%97%EF%BC%89.jpg"></p>
+<h4 id="2-2-5-2补码的乘法运算"><a href="#2-2-5-2补码的乘法运算" class="headerlink" title="2.2.5-2补码的乘法运算"></a>2.2.5-2补码的乘法运算</h4><p>原码乘法和补码乘法的区别<br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%95%E5%92%8C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%95%E5%8C%BA%E5%88%AB.jpg"></p>
+<p>补码运算器实现<br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E8%A1%A5%E7%A0%81%E8%BF%90%E7%AE%97%E5%99%A8%E5%AE%9E%E7%8E%B0.jpg"></p>
+<p>手算<br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E8%A1%A5%E7%A0%81%E4%B8%80%E4%BD%8D%E4%B9%98%E6%B3%95%EF%BC%88%E6%89%8B%E7%AE%97%EF%BC%89.jpg"></p>
+<h4 id="2-2-6-1原码的除法运算"><a href="#2-2-6-1原码的除法运算" class="headerlink" title="2.2.6-1原码的除法运算"></a>2.2.6-1原码的除法运算</h4>
       
 
       
@@ -894,7 +899,36 @@ public:
     &#125;
 &#125;;
 </code></pre>
-<h3 id="665-Non-decreasing-Array-Easy"><a href="#665-Non-decreasing-Array-Easy" class="headerlink" title="665.Non-decreasing Array(Easy)"></a><font orange>665.Non-decreasing Array(Easy)</font></h3><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
+<h3 id="665-Non-decreasing-Array-Easy"><a href="#665-Non-decreasing-Array-Easy" class="headerlink" title="665.Non-decreasing Array(Easy)"></a><font orange>665.Non-decreasing Array(Easy)</font></h3><h3 id="题目描述-8"><a href="#题目描述-8" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你一个长度为<kbd>n</kbd>的整数数组，请你判断在<strong>最多</strong>改变<kbd>1</kbd>个元素的情况下，该数组能否变成一个非递减数列。<br>我们是这样定义一个非递减数列的：对于数组中任意的<kbd>i</kbd><kbd>(0 <= i <= n-2)</kbd>,总满足<kbd>nums[i] <= nums[i+1]</kbd>。</p>
+<h3 id="示例1：-5"><a href="#示例1：-5" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
+<p>输入：nums = [4,2,3]<br>输出：true<br>解释：你可以通过把第一个4变成1来使得它成为一个非递减数列。</p>
+</blockquote>
+<h3 id="示例2：-4"><a href="#示例2：-4" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
+<p>输入：nums = [4,2,1]<br>输出：false<br>解释：你不能在只改变一个元素的情况下将其变为非递减数列。</p>
+</blockquote>
+<h3 id="题解-8"><a href="#题解-8" class="headerlink" title="题解"></a>题解</h3><p>&ensp;&ensp;先分为两种情况：第一种是有两个nums[i] &gt; nums[i+1],这种情况下必然不能改变一个元素将数列变为非递减数列；第二种是只有一个nums[i] &gt; nums[i+1],这种情况下只有当nums[i+1] &gt;= nums[i-1]或者nums[i] &lt;= nums[i+2]或者nums[i-1]不存在或nums[i+1]不存在时才能改变一个元素将数列变为非递减数列。<br>具体实现：将其改成不递减序列，如果i&gt;0并且nums[i+1] &lt; nums[i-1],将nums[i+1]改成nums[i]。</p>
+<pre><code>class Solution&#123;
+public:
+    bool checkPossibility(vector&lt;int&gt;&amp; nums)&#123;
+        int size = nums.size();
+        int count = 0;
+        for(int i = 0; i &lt; size - 1; i++)&#123;
+            int x = nums[i], y = nums[i+1];
+            if(x &gt; y)&#123;
+                count++;
+                if(count &gt; 1)&#123;
+                    return false;
+                &#125;
+                if(i &gt; 0 &amp;&amp; y &lt; nums[i-1])&#123;
+                    nums[i+1] = x;
+                &#125;
+            &#125;
+        &#125;
+        return true;
+    &#125;
+&#125;;
+</code></pre>
+<h1 id="第3章-玩转双指针"><a href="#第3章-玩转双指针" class="headerlink" title="第3章 玩转双指针"></a>第3章 玩转双指针</h1><h2 id="3-1-算法解释"><a href="#3-1-算法解释" class="headerlink" title="3.1 算法解释"></a>3.1 算法解释</h2><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
 
       
 
