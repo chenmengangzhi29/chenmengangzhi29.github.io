@@ -16,7 +16,7 @@
 <meta property="og:description" content="第2章 贪心算法2.1 算法解释顾名思义，贪心算法采用贪心的策略，保证每次操作都是局部最优的，从而使最后得到的结果是全局最优的。 2.2 分配问题455.Assign Cookies(Easy)题目描述&amp;ensp;&amp;ensp;假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。&amp;ensp;&amp;ensp;对每个孩子i，都有一个胃口值g[i]，这是能让孩子们满足胃口的饼">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-11T11:17:02.000Z">
-<meta property="article:modified_time" content="2021-03-24T12:36:26.870Z">
+<meta property="article:modified_time" content="2021-03-25T13:51:06.375Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -437,7 +437,35 @@ public:
     &#125;
 &#125;;
 </code></pre>
-<h1 id="第3章-玩转双指针"><a href="#第3章-玩转双指针" class="headerlink" title="第3章 玩转双指针"></a>第3章 玩转双指针</h1><h2 id="3-1-算法解释"><a href="#3-1-算法解释" class="headerlink" title="3.1 算法解释"></a>3.1 算法解释</h2><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
+<h1 id="第3章-玩转双指针"><a href="#第3章-玩转双指针" class="headerlink" title="第3章 玩转双指针"></a>第3章 玩转双指针</h1><h2 id="3-1-算法解释"><a href="#3-1-算法解释" class="headerlink" title="3.1 算法解释"></a>3.1 算法解释</h2><p>&ensp;&ensp;<strong>双指针</strong>主要用于遍历数组，两个指针指向不同的元素，从而协同完成任务。也可以延伸到多个数组的多个指针。<br>&ensp;&ensp;若两个指针指向同一数组，遍历方向相同且不会相交，则也称为<strong>滑动窗口</strong>（两个指针包围的区域即为当前的窗口），经常用于区间搜索。<br>&ensp;&ensp;若两个指针指向同一数组，但是遍历方向相反，则可以用来进行搜索，待搜索的数组往往是排好序的。<br>&ensp;&ensp;对于C++语言，指针还可以玩出很多新的花样。一些常见的关于指针的操作如下。</p>
+<p><strong>指针与常量</strong></p>
+<pre><code>int x;
+int * p1 = &amp;x;//指针可以被修改，值也可以被修改
+const int * p2 = &amp;x;//指针可以被修改，值不可以被修改（const int)
+int * const p3 = &amp;x;//指针不可以被修改(* const),值可以被修改
+const int * const p4 = &amp;x;//指针不可以被修改，值也不可以被修改
+</code></pre>
+<p><strong>指针函数与函数指针</strong></p>
+<pre><code>//addition是指针函数，一个返回类型是指针的函数
+int* addition(int a, int b)&#123;
+    int* sum = new int(a+b);
+    return sum;
+&#125;
+
+int subtraction(int a, int b)&#123;
+    return a - b;
+&#125;
+
+int operation(int x, int y, int (*func)(int, int))&#123;
+    return (*func)(x,y);
+&#125;
+
+//minus是函数指针，指向函数的指针
+int (*minus)(int, int) = subtraction;
+int* m = addition(1,2);
+int n = operation(3,*m,minus);
+</code></pre>
+<h2 id="3-2-Two-Sum"><a href="#3-2-Two-Sum" class="headerlink" title="3.2 Two Sum"></a>3.2 Two Sum</h2><h3 id="167-Two-Sum-II-Input-array-is-sorted-Easy"><a href="#167-Two-Sum-II-Input-array-is-sorted-Easy" class="headerlink" title="167.Two Sum II - Input array is sorted(Easy)"></a><font orange>167.Two Sum II - Input array is sorted(Easy)</font></h3><h3 id="题目描述-9"><a href="#题目描述-9" class="headerlink" title="题目描述"></a>题目描述</h3><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
 
       
 
