@@ -208,7 +208,7 @@
 <p><strong>问题</strong><br>问：主频高的CPU一定比主频低的CPU快吗？<br>不一定，如两个CPU，A的主频为2GHz,平均CPI=10；B的主频1GHz,平均CPI=1。A的IPS=0.2，B的IPS=1，显然B更快。</p>
 <p>问：若A、B两个CPU的平均CPI相同，那么A一定更快吗？<br>也不一定，还要看指令系统，如A不支持乘法指令，只能用多次加法实现乘法；而B支持乘法指令</p>
 <p>问：基准程序执行得越快说明机器性能越好吗？<br>基准程序中语句存在频度差异，运行结果也不能完全说明问题</p>
-<h2 id="第二章-数据的表示和运算"><a href="#第二章-数据的表示和运算" class="headerlink" title="第二章 数据的表示和运算"></a>第二章 数据的表示和运算</h2><h4 id="2-1-1进位计数制"><a href="#2-1-1进位计数制" class="headerlink" title="2.1.1进位计数制"></a>2.1.1进位计数制</h4><p>位权：由每个符号所处位置所确定的权值权重<br>基数：每个数码位所用到的不同符号的个数，r进制的基数为r</p>
+<h2 id="第二章-数据的表示和运算"><a href="#第二章-数据的表示和运算" class="headerlink" title="第二章 数据的表示和运算"></a>第二章 数据的表示和运算</h2><h3 id="2-1-数制与编码"><a href="#2-1-数制与编码" class="headerlink" title="2.1 数制与编码"></a>2.1 数制与编码</h3><h4 id="2-1-1进位计数制"><a href="#2-1-1进位计数制" class="headerlink" title="2.1.1进位计数制"></a>2.1.1进位计数制</h4><p>位权：由每个符号所处位置所确定的权值权重<br>基数：每个数码位所用到的不同符号的个数，r进制的基数为r</p>
 <p>为什么使用二进制？<br></p>
 <ol>
 <li>可使用两个稳定状态的物理器件表示<br></li>
@@ -243,7 +243,7 @@
 <p><strong>补充</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E6%B5%B7%E6%98%8E%E7%A0%81%E8%A1%A5%E5%85%85.jpg"></p>
 <h4 id="2-1-6循环冗余校验码"><a href="#2-1-6循环冗余校验码" class="headerlink" title="2.1.6循环冗余校验码"></a>2.1.6循环冗余校验码</h4><p>循环冗余校验（Cyclic Redundancy Check,CRC)<br><strong>循环冗余校验码的基本思想</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E6%A0%A1%E9%AA%8C%E7%A0%81%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3.jpg"></p>
 <p>例子：<br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E4%BE%8B01.png"><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E4%BE%8B02.png"><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E4%BE%8B03.png"><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E4%BE%8B4.jpg"></p>
-<h4 id="2-2-1定点数的表示"><a href="#2-2-1定点数的表示" class="headerlink" title="2.2.1定点数的表示"></a>2.2.1定点数的表示</h4><p>定点数：小数点的位置固定 Eg:996.007  –常规计数<br>浮点数：小数点的位置不固定 Eg:9.96007*10的2次方 –科学计数法<br><strong>无符号数的表示</strong><br>无符号数：整个机器字长的全部二进制位均为数值位，没有符号位，相当于数的绝对值。（通常只有无符号整数，而没有无符号小数）<br>表示范围：8位二进制数：2的8次方不同的状态<br>0000 0000 ~ 1111 1111<br>0 ~ 255<br>n位的无符号数表示范围为：0 ~ 2的n次方 - 1</p>
+<h3 id="2-2-定点数的表示与运算"><a href="#2-2-定点数的表示与运算" class="headerlink" title="2.2 定点数的表示与运算"></a>2.2 定点数的表示与运算</h3><h4 id="2-2-1定点数的表示"><a href="#2-2-1定点数的表示" class="headerlink" title="2.2.1定点数的表示"></a>2.2.1定点数的表示</h4><p>定点数：小数点的位置固定 Eg:996.007  –常规计数<br>浮点数：小数点的位置不固定 Eg:9.96007*10的2次方 –科学计数法<br><strong>无符号数的表示</strong><br>无符号数：整个机器字长的全部二进制位均为数值位，没有符号位，相当于数的绝对值。（通常只有无符号整数，而没有无符号小数）<br>表示范围：8位二进制数：2的8次方不同的状态<br>0000 0000 ~ 1111 1111<br>0 ~ 255<br>n位的无符号数表示范围为：0 ~ 2的n次方 - 1</p>
 <p><strong>有符号数的定点表示</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E6%9C%89%E7%AC%A6%E5%8F%B7%E6%95%B0%E7%9A%84%E5%AE%9A%E7%82%B9%E8%A1%A8%E7%A4%BA.png"><br><strong>原码</strong>：用尾数表示真值的绝对值，符号位“0/1”对应“正/负”<br>若机器字长为n+1位，则尾数占n位<br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%8E%9F%E7%A0%81%E8%A1%A8%E7%A4%BA%E8%8C%83%E5%9B%B4.jpg"></p>
 <p><strong>反码</strong><br>反码：若符号位为0，则反码与原码相同。若符号位为1，则数值位全部取反。<br>反码的表示范围与原码相同<br>反码只是原码转变为补码的一个中间状态，实际中并没什么卵用</p>
 <p><strong>补码</strong><br>正数的补码=原码<br>负数的补码=反码末位+1（要考虑进位）<br>将负数补码转回原码的方法相同：尾数取反，末位+1<br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E8%A1%A5%E7%A0%81%E8%A1%A8%E7%A4%BA%E8%8C%83%E5%9B%B4.jpg"></p>
@@ -278,7 +278,7 @@
 <h4 id="2-2-7-强制类型转换"><a href="#2-2-7-强制类型转换" class="headerlink" title="2.2.7 强制类型转换"></a>2.2.7 强制类型转换</h4><p><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.jpg"></p>
 <h4 id="2-2-8-数据的存储和排列"><a href="#2-2-8-数据的存储和排列" class="headerlink" title="2.2.8 数据的存储和排列"></a>2.2.8 数据的存储和排列</h4><p>大小端模式<br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%A4%A7%E5%B0%8F%E7%AB%AF%E6%A8%A1%E5%BC%8F.jpg"></p>
 <p>边界对齐<br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E8%BE%B9%E7%95%8C%E5%AF%B9%E9%BD%90.jpg"></p>
-<h4 id="2-3-1-浮点数的表示"><a href="#2-3-1-浮点数的表示" class="headerlink" title="2.3.1 浮点数的表示"></a>2.3.1 浮点数的表示</h4><p><strong>定点数的局限性</strong><br>short、int、long<br>定点数可表示的数字范围有限，但我们不能无限制地增加数据的长度<br>如何在<strong>位数不变</strong>的情况下增加数据表示范围？</p>
+<h3 id="浮点数的表示与运算"><a href="#浮点数的表示与运算" class="headerlink" title="浮点数的表示与运算"></a>浮点数的表示与运算</h3><h4 id="2-3-1-浮点数的表示"><a href="#2-3-1-浮点数的表示" class="headerlink" title="2.3.1 浮点数的表示"></a>2.3.1 浮点数的表示</h4><p><strong>定点数的局限性</strong><br>short、int、long<br>定点数可表示的数字范围有限，但我们不能无限制地增加数据的长度<br>如何在<strong>位数不变</strong>的情况下增加数据表示范围？</p>
 <p><strong>从科学计数法理解浮点数</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%BB%8E%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95%E7%90%86%E8%A7%A3%E6%B5%AE%E7%82%B9%E6%95%B0.jpg"></p>
 <p><strong>浮点数的表示</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA.jpg"></p>
 <p><strong>浮点数尾数的规格化</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%B0%BE%E6%95%B0%E7%9A%84%E8%A7%84%E6%A0%BC%E5%8C%96.jpg"></p>
@@ -292,7 +292,7 @@
 <p><strong>二进制浮点数加减运算</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97.jpg"></p>
 <p><strong>舍入</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97-%E8%88%8D%E5%85%A5.png"></p>
 <p><strong>浮点数的强制类型转换</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.jpg"></p>
-<h4 id="2-4-1电路的基本原理、加法器设计"><a href="#2-4-1电路的基本原理、加法器设计" class="headerlink" title="2.4.1电路的基本原理、加法器设计"></a>2.4.1电路的基本原理、加法器设计</h4><p><strong>算术逻辑单元（ALU）</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83%EF%BC%88ALU%EF%BC%89.jpg"></p>
+<h3 id="2-4算术逻辑单元"><a href="#2-4算术逻辑单元" class="headerlink" title="2.4算术逻辑单元"></a>2.4算术逻辑单元</h3><h4 id="2-4-1电路的基本原理、加法器设计"><a href="#2-4-1电路的基本原理、加法器设计" class="headerlink" title="2.4.1电路的基本原理、加法器设计"></a>2.4.1电路的基本原理、加法器设计</h4><p><strong>算术逻辑单元（ALU）</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83%EF%BC%88ALU%EF%BC%89.jpg"></p>
 <p><strong>最基本的逻辑运算</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E6%9C%80%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97(1).png"></p>
 <p><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E6%9C%80%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97(2).png"></p>
 <p><strong>复合逻辑</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%A4%8D%E5%90%88%E9%80%BB%E8%BE%91(1).jpg"></p>
@@ -302,7 +302,31 @@
 <p><strong>一位全加器</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%80%E4%BD%8D%E5%85%A8%E5%8A%A0%E5%99%A8.jpg"></p>
 <p><strong>串行加法器</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%B2%E8%A1%8C%E5%8A%A0%E6%B3%95%E5%99%A8.jpg"></p>
 <p><strong>并行加法器</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%B9%B6%E8%A1%8C%E5%8A%A0%E6%B3%95%E5%99%A8.jpg"></p>
-<h4 id="2-4-2-加法器、ALU的改进"><a href="#2-4-2-加法器、ALU的改进" class="headerlink" title="2.4.2 加法器、ALU的改进"></a>2.4.2 加法器、ALU的改进</h4>
+<h4 id="2-4-2-加法器、ALU的改进"><a href="#2-4-2-加法器、ALU的改进" class="headerlink" title="2.4.2 加法器、ALU的改进"></a>2.4.2 加法器、ALU的改进</h4><p><strong>如何更快地产生进位？</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%A6%82%E4%BD%95%E6%9B%B4%E5%BF%AB%E5%9C%B0%E4%BA%A7%E7%94%9F%E8%BF%9B%E4%BD%8D%EF%BC%9F.jpg"></p>
+<p><strong>并行加法器的优化</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%B9%B6%E8%A1%8C%E5%8A%A0%E6%B3%95%E5%99%A8%E7%9A%84%E4%BC%98%E5%8C%9601.jpg"><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%B9%B6%E8%A1%8C%E5%8A%A0%E6%B3%95%E5%99%A8%E7%9A%84%E4%BC%98%E5%8C%9602.jpg"><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%B9%B6%E8%A1%8C%E5%8A%A0%E6%B3%95%E5%99%A8%E7%9A%84%E4%BC%98%E5%8C%9603.jpg"></p>
+<p><strong>ALU芯片的优化</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/ALU%E8%8A%AF%E7%89%87%E7%9A%84%E4%BC%98%E5%8C%96.jpg"></p>
+<p>串行加法器-&gt;串行进位的并行加法器-&gt;组内并行、组间串行进位的加法器-&gt;组内并行、组间并行进位的加法器</p>
+<h2 id="第三章-存储系统"><a href="#第三章-存储系统" class="headerlink" title="第三章 存储系统"></a>第三章 存储系统</h2><h3 id="3-1-存储器的层次结构"><a href="#3-1-存储器的层次结构" class="headerlink" title="3.1 存储器的层次结构"></a>3.1 存储器的层次结构</h3><p><strong>主存储器</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E6%A6%82%E5%BF%B5.jpg"></p>
+<p><strong>主存储器的简单模型</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E7%AE%80%E5%8D%95%E6%A8%A1%E5%9E%8B.jpg"></p>
+<p><strong>存储器芯片的基本结构</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%AD%98%E5%82%A8%E5%99%A8%E8%8A%AF%E7%89%87%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84.jpg"></p>
+<p><strong>寻址</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%AF%BB%E5%9D%80.jpg"></p>
+<h3 id="3-3-半导体随机存储器"><a href="#3-3-半导体随机存储器" class="headerlink" title="3.3 半导体随机存储器"></a>3.3 半导体随机存储器</h3><h4 id="3-3-1-半导体存储器RAM"><a href="#3-3-1-半导体存储器RAM" class="headerlink" title="3.3.1 半导体存储器RAM"></a>3.3.1 半导体存储器RAM</h4><p><strong>半导体存储芯片的基本结构</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84.jpg"></p>
+<p><strong>半导体随机存取存储器</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%8D%8A%E5%AF%BC%E4%BD%93%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%8F%96%E5%AD%98%E5%82%A8%E5%99%A8.png"></p>
+<p><strong>DRAM的刷新</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/DRAM%E7%9A%84%E5%88%B7%E6%96%B001.png"><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/DRAM%E7%9A%84%E5%88%B7%E6%96%B002.png"></p>
+<p><strong>SRAM的读周期</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/SRAM%E7%9A%84%E8%AF%BB%E5%91%A8%E6%9C%9F.png"></p>
+<p><strong>SRAM的写周期</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/SRAM%E7%9A%84%E5%86%99%E5%91%A8%E6%9C%9F.png"></p>
+<h4 id="3-3-2-半导体存储器ROM"><a href="#3-3-2-半导体存储器ROM" class="headerlink" title="3.3.2 半导体存储器ROM"></a>3.3.2 半导体存储器ROM</h4><p><strong>RAM-易失性存储器</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/RAM-%E6%98%93%E5%A4%B1%E6%80%A7%E5%AD%98%E5%82%A8%E5%99%A8.png"><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/RAM-%E6%98%93%E5%A4%B1%E6%80%A7%E5%AD%98%E5%82%A8%E5%99%A802.png"></p>
+<p><strong>ROM:Read-Only Memory</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/ROM%20Read-Only%20Memory.png"></p>
+<h4 id="半导体随机存储器总结"><a href="#半导体随机存储器总结" class="headerlink" title="半导体随机存储器总结"></a>半导体随机存储器总结</h4><p><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%8D%8A%E5%AF%BC%E4%BD%93%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%82%A8%E5%99%A8%E6%80%BB%E7%BB%93.png"></p>
+<h4 id="3-3-3-存储器基本概念"><a href="#3-3-3-存储器基本概念" class="headerlink" title="3.3.3 存储器基本概念"></a>3.3.3 存储器基本概念</h4><p><strong>存储器的分类</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB.png"></p>
+<p><strong>存储器的性能指标</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87.png"></p>
+<p><strong>存储器的层次化结构</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E5%8C%96%E7%BB%93%E6%9E%84.png"></p>
+<h3 id="3-4-主存储器与CPU的连接"><a href="#3-4-主存储器与CPU的连接" class="headerlink" title="3.4 主存储器与CPU的连接"></a>3.4 主存储器与CPU的连接</h3><h4 id="3-4-1主存与CPU的连接"><a href="#3-4-1主存与CPU的连接" class="headerlink" title="3.4.1主存与CPU的连接"></a>3.4.1主存与CPU的连接</h4><p><strong>主存容量扩展-位扩展</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%BB%E5%AD%98%E5%AE%B9%E9%87%8F%E6%89%A9%E5%B1%95-%E4%BD%8D%E6%89%A9%E5%B1%95.png"></p>
+<p><strong>主存容量扩展-译码器</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%BB%E5%AD%98%E5%AE%B9%E9%87%8F%E6%89%A9%E5%B1%95-%E8%AF%91%E7%A0%81%E5%99%A8.png"></p>
+<p><strong>主存容量扩展-字扩展</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%BB%E5%AD%98%E5%AE%B9%E9%87%8F%E6%89%A9%E5%B1%95-%E5%AD%97%E6%89%A9%E5%B1%95.png"><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%BB%E5%AD%98%E5%AE%B9%E9%87%8F%E6%89%A9%E5%B1%95-%E5%AD%97%E6%89%A9%E5%B1%95%E7%89%87%E9%80%89%E6%B3%95.png"></p>
+<p><strong>主存容量扩展-字位同时扩展</strong><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%BB%E5%AD%98%E5%AE%B9%E9%87%8F%E6%89%A9%E5%B1%95-%E5%AD%97%E4%BD%8D%E5%90%8C%E6%97%B6%E6%89%A9%E5%B1%95.png"></p>
+<h4 id="3-4-2-主存与CPU的连接-例题"><a href="#3-4-2-主存与CPU的连接-例题" class="headerlink" title="3.4.2 主存与CPU的连接-例题"></a>3.4.2 主存与CPU的连接-例题</h4><p><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%BB%E5%AD%98%E4%B8%8ECPU%E7%9A%84%E8%BF%9E%E6%8E%A5-%E4%BE%8B%E9%A2%9801.png"><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%BB%E5%AD%98%E4%B8%8ECPU%E7%9A%84%E8%BF%9E%E6%8E%A5-%E4%BE%8B%E9%A2%9802.png"><br><img src="https://raw.githubusercontent.com/chenmengangzhi29/chenmengangzhi29/main/Principles%20of%20Computer%20Organization/%E4%B8%BB%E5%AD%98%E4%B8%8ECPU%E7%9A%84%E8%BF%9E%E6%8E%A5-%E4%BE%8B%E9%A2%98%E6%80%BB%E7%BB%93.png"></p>
+<h3 id="3-5双端口RAM和多模块存储器"><a href="#3-5双端口RAM和多模块存储器" class="headerlink" title="3.5双端口RAM和多模块存储器"></a>3.5双端口RAM和多模块存储器</h3>
       
 
       
@@ -1041,7 +1065,91 @@ public:
     &#125;
 &#125;;
 </code></pre>
-<h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
+<h2 id="3-4-快慢指针"><a href="#3-4-快慢指针" class="headerlink" title="3.4 快慢指针"></a>3.4 快慢指针</h2><h3 id="142-Linked-List-Cycle-Ⅱ-Medium"><a href="#142-Linked-List-Cycle-Ⅱ-Medium" class="headerlink" title="142.Linked List Cycle Ⅱ(Medium)"></a><font orange>142.Linked List Cycle Ⅱ(Medium)</font></h3><h3 id="题目描述-11"><a href="#题目描述-11" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个链表，返回链表开始入环的第一个节点。如果链表无环，则返回<kbd>null</kbd>。</p>
+<p>为了表示给定链表中的环，我们使用整数<kbd>pos</kbd>来表示链表尾连接到链表中的位置（索引从0开始）。如果<kbd>pos</kbd>是<kbd>-1</kbd>，则在该链表中没有环。注意，<kbd>pos</kbd><strong>仅仅是用于标识环的情况，并不会作为参数传递到函数中。</strong></p>
+<p>说明：不允许修改给定的链表。</p>
+<p>进阶：<br>你是否可以使用<kbd>O(1)</kbd>空间解决此题？</p>
+<h3 id="示例1：-8"><a href="#示例1：-8" class="headerlink" title="示例1："></a>示例1：</h3><p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png"></p>
+<blockquote>
+<p>输入：head = [3,2,0,-4], pos = 1<br>输出：返回索引为1的链表节点<br>解释：链表中有一个环，其尾部连接到第二个节点。</p>
+</blockquote>
+<h3 id="示例2：-7"><a href="#示例2：-7" class="headerlink" title="示例2："></a>示例2：</h3><p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png"></p>
+<blockquote>
+<p>输入：head = [1,2], pos = 0<br>输出：返回索引为0的链表节点<br>解释：链表中有一个环，其尾部连接到第一个节点。</p>
+</blockquote>
+<h3 id="示例3：-2"><a href="#示例3：-2" class="headerlink" title="示例3："></a>示例3：</h3><p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png"></p>
+<blockquote>
+<p>输入：head = [1], pos = -1<br>输出：返回null<br>解释：链表中没有环。</p>
+</blockquote>
+<h3 id="题解-11"><a href="#题解-11" class="headerlink" title="题解"></a>题解</h3><p>设置一个快指针（每次走两步）和一个慢指针（每次走一步），第一步判断是否存在回路，不存在则返回空，存在则fast走两步，slow走一步，直到第一次相遇。第二步查找入环节点，将fast重新指向头节点，并且fast和slow都一次一步，直到第二次相遇就是指向入环结点。</p>
+<pre><code>//Definition for singly-linked list.
+ //struct ListNode&#123; 
+//        int val;
+//        ListNode *next;
+//        ListNode(int x) : val(x), next(NULL) &#123;&#125;
+//&#125;;
+class Solution&#123;
+public:
+    ListNode *detectCycle(ListNode *head)&#123;
+        ListNode *slow = head, *fast = head;
+        //判断是否存在环路
+        do&#123;
+            if(!fast || !fast-&gt;next) return nullptr;
+            fast = fast-&gt;next-&gt;next;
+            slow = slow-&gt;next;
+        &#125;while(fast != slow);
+        //如果存在，查找环路结点
+        fast = head;
+        while(fast != slow)&#123;
+            fast = fast-&gt;next;
+            slow = slow-&gt;next;
+        &#125;
+        return fast;
+    &#125;
+&#125;;
+</code></pre>
+<h2 id="3-5-滑动窗口"><a href="#3-5-滑动窗口" class="headerlink" title="3.5 滑动窗口"></a>3.5 滑动窗口</h2><h3 id="76-Minimum-Window-Substring-Hard"><a href="#76-Minimum-Window-Substring-Hard" class="headerlink" title="76.Minimum Window Substring(Hard)"></a><font orange>76.Minimum Window Substring(Hard)</font></h3><h3 id="题目描述-12"><a href="#题目描述-12" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你一个字符串<kbd>s</kbd>、一个字符串<kbd>t</kbd>。返回<kbd>s</kbd>中涵盖<kbd>t</kbd>所有字符的最小子串。如果<kbd>s</kbd>中不存在涵盖<kbd>t</kbd>所有字符的子串，则返回空字符串<kbd>""</kbd>。</p>
+<p>注意：如果<kbd>s</kbd>中存在这样的子串，我们保证它是唯一的答案。</p>
+<h3 id="示例1：-9"><a href="#示例1：-9" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
+<p>输入：s = “ADOBECODEBANC”,t = “ABC”<br>输出：”BANC”</p>
+</blockquote>
+<h3 id="示例2：-8"><a href="#示例2：-8" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
+<p>输入：s = “a”, t = “a”<br>输出：”a”</p>
+</blockquote>
+<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>第一步，用数组记录t中存在的字符及其数量；第二步，设立一个左指针和一个右指针，用右指针遍历，找到t中存在的字符，每找到一个需要的字符则cnt+1，数组中记录相应减1，当cnt和t的大小相等时，判断是否为最小子串，然后再将l向后缩小变成最小子串，缩到需要的字符缺少时，则继续用r指针去寻找需要的字符。</p>
+<pre><code>class Solution&#123;
+public:
+    string minWindow(string s, string t)&#123;
+        vector&lt;int&gt; chars(128,0);
+        vector&lt;bool&gt; flag(128,false);
+        for(int i = 0; i &lt; t.size(); ++i)&#123;
+            flag[t[i]] = true;//每个字符是否在t中存在
+            ++chars[t[i]];//目前每个字符缺少的数量
+        &#125;
+        int cnt = 0, l = 0, min_l = 0, min_size = s.size() + 1;
+        for(int r = 0; r &lt; s.size(); ++r)&#123;
+            if(flag[s[r]])&#123;
+                if(--chars[s[r]] &gt;= 0)&#123;//找出含有所有字符的子串（每个字符只有一个）
+                    ++cnt;
+                &#125;
+                
+                while(cnt == t.size())&#123;//变成最小子串
+                    if(r - l + 1 &lt; min_size)&#123;
+                        min_l = l;
+                        min_size = r - l + 1;
+                    &#125;
+                    if(flag[s[l]] &amp;&amp; ++chars[s[l]] &gt; 0)&#123;
+                        --cnt;
+                    &#125;
+                    ++l;
+                &#125;
+            &#125;
+        &#125;
+        return min_size &gt; s.size() ? &quot;&quot; : s.substr(min_l,min_size);
+    &#125;
+&#125;;
+</code></pre>
+<h2 id="3-6-练习"><a href="#3-6-练习" class="headerlink" title="3.6 练习"></a>3.6 练习</h2><h3 id="基础难度"><a href="#基础难度" class="headerlink" title="基础难度"></a>基础难度</h3><h3 id="633-Sum-of-Square-Numbers-Easy"><a href="#633-Sum-of-Square-Numbers-Easy" class="headerlink" title="633.Sum of Square Numbers(Easy)"></a><font orange>633.Sum of Square Numbers(Easy)</font></h3><h3 id="题目描述-13"><a href="#题目描述-13" class="headerlink" title="题目描述"></a>题目描述</h3><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
 
       
 

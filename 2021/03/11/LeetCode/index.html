@@ -15,10 +15,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="第2章 贪心算法2.1 算法解释顾名思义，贪心算法采用贪心的策略，保证每次操作都是局部最优的，从而使最后得到的结果是全局最优的。 2.2 分配问题455.Assign Cookies(Easy)题目描述&amp;ensp;&amp;ensp;假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。&amp;ensp;&amp;ensp;对每个孩子i，都有一个胃口值g[i]，这是能让孩子们满足胃口的饼">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png">
+<meta property="og:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png">
+<meta property="og:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png">
 <meta property="article:published_time" content="2021-03-11T11:17:02.000Z">
-<meta property="article:modified_time" content="2021-04-06T14:06:59.656Z">
+<meta property="article:modified_time" content="2021-04-08T13:15:32.095Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -514,7 +518,91 @@ public:
     &#125;
 &#125;;
 </code></pre>
-<h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
+<h2 id="3-4-快慢指针"><a href="#3-4-快慢指针" class="headerlink" title="3.4 快慢指针"></a>3.4 快慢指针</h2><h3 id="142-Linked-List-Cycle-Ⅱ-Medium"><a href="#142-Linked-List-Cycle-Ⅱ-Medium" class="headerlink" title="142.Linked List Cycle Ⅱ(Medium)"></a><font orange>142.Linked List Cycle Ⅱ(Medium)</font></h3><h3 id="题目描述-11"><a href="#题目描述-11" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个链表，返回链表开始入环的第一个节点。如果链表无环，则返回<kbd>null</kbd>。</p>
+<p>为了表示给定链表中的环，我们使用整数<kbd>pos</kbd>来表示链表尾连接到链表中的位置（索引从0开始）。如果<kbd>pos</kbd>是<kbd>-1</kbd>，则在该链表中没有环。注意，<kbd>pos</kbd><strong>仅仅是用于标识环的情况，并不会作为参数传递到函数中。</strong></p>
+<p>说明：不允许修改给定的链表。</p>
+<p>进阶：<br>你是否可以使用<kbd>O(1)</kbd>空间解决此题？</p>
+<h3 id="示例1：-8"><a href="#示例1：-8" class="headerlink" title="示例1："></a>示例1：</h3><p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png"></p>
+<blockquote>
+<p>输入：head = [3,2,0,-4], pos = 1<br>输出：返回索引为1的链表节点<br>解释：链表中有一个环，其尾部连接到第二个节点。</p>
+</blockquote>
+<h3 id="示例2：-7"><a href="#示例2：-7" class="headerlink" title="示例2："></a>示例2：</h3><p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png"></p>
+<blockquote>
+<p>输入：head = [1,2], pos = 0<br>输出：返回索引为0的链表节点<br>解释：链表中有一个环，其尾部连接到第一个节点。</p>
+</blockquote>
+<h3 id="示例3：-2"><a href="#示例3：-2" class="headerlink" title="示例3："></a>示例3：</h3><p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png"></p>
+<blockquote>
+<p>输入：head = [1], pos = -1<br>输出：返回null<br>解释：链表中没有环。</p>
+</blockquote>
+<h3 id="题解-11"><a href="#题解-11" class="headerlink" title="题解"></a>题解</h3><p>设置一个快指针（每次走两步）和一个慢指针（每次走一步），第一步判断是否存在回路，不存在则返回空，存在则fast走两步，slow走一步，直到第一次相遇。第二步查找入环节点，将fast重新指向头节点，并且fast和slow都一次一步，直到第二次相遇就是指向入环结点。</p>
+<pre><code>//Definition for singly-linked list.
+ //struct ListNode&#123; 
+//        int val;
+//        ListNode *next;
+//        ListNode(int x) : val(x), next(NULL) &#123;&#125;
+//&#125;;
+class Solution&#123;
+public:
+    ListNode *detectCycle(ListNode *head)&#123;
+        ListNode *slow = head, *fast = head;
+        //判断是否存在环路
+        do&#123;
+            if(!fast || !fast-&gt;next) return nullptr;
+            fast = fast-&gt;next-&gt;next;
+            slow = slow-&gt;next;
+        &#125;while(fast != slow);
+        //如果存在，查找环路结点
+        fast = head;
+        while(fast != slow)&#123;
+            fast = fast-&gt;next;
+            slow = slow-&gt;next;
+        &#125;
+        return fast;
+    &#125;
+&#125;;
+</code></pre>
+<h2 id="3-5-滑动窗口"><a href="#3-5-滑动窗口" class="headerlink" title="3.5 滑动窗口"></a>3.5 滑动窗口</h2><h3 id="76-Minimum-Window-Substring-Hard"><a href="#76-Minimum-Window-Substring-Hard" class="headerlink" title="76.Minimum Window Substring(Hard)"></a><font orange>76.Minimum Window Substring(Hard)</font></h3><h3 id="题目描述-12"><a href="#题目描述-12" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你一个字符串<kbd>s</kbd>、一个字符串<kbd>t</kbd>。返回<kbd>s</kbd>中涵盖<kbd>t</kbd>所有字符的最小子串。如果<kbd>s</kbd>中不存在涵盖<kbd>t</kbd>所有字符的子串，则返回空字符串<kbd>""</kbd>。</p>
+<p>注意：如果<kbd>s</kbd>中存在这样的子串，我们保证它是唯一的答案。</p>
+<h3 id="示例1：-9"><a href="#示例1：-9" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
+<p>输入：s = “ADOBECODEBANC”,t = “ABC”<br>输出：”BANC”</p>
+</blockquote>
+<h3 id="示例2：-8"><a href="#示例2：-8" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
+<p>输入：s = “a”, t = “a”<br>输出：”a”</p>
+</blockquote>
+<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>第一步，用数组记录t中存在的字符及其数量；第二步，设立一个左指针和一个右指针，用右指针遍历，找到t中存在的字符，每找到一个需要的字符则cnt+1，数组中记录相应减1，当cnt和t的大小相等时，判断是否为最小子串，然后再将l向后缩小变成最小子串，缩到需要的字符缺少时，则继续用r指针去寻找需要的字符。</p>
+<pre><code>class Solution&#123;
+public:
+    string minWindow(string s, string t)&#123;
+        vector&lt;int&gt; chars(128,0);
+        vector&lt;bool&gt; flag(128,false);
+        for(int i = 0; i &lt; t.size(); ++i)&#123;
+            flag[t[i]] = true;//每个字符是否在t中存在
+            ++chars[t[i]];//目前每个字符缺少的数量
+        &#125;
+        int cnt = 0, l = 0, min_l = 0, min_size = s.size() + 1;
+        for(int r = 0; r &lt; s.size(); ++r)&#123;
+            if(flag[s[r]])&#123;
+                if(--chars[s[r]] &gt;= 0)&#123;//找出含有所有字符的子串（每个字符只有一个）
+                    ++cnt;
+                &#125;
+                
+                while(cnt == t.size())&#123;//变成最小子串
+                    if(r - l + 1 &lt; min_size)&#123;
+                        min_l = l;
+                        min_size = r - l + 1;
+                    &#125;
+                    if(flag[s[l]] &amp;&amp; ++chars[s[l]] &gt; 0)&#123;
+                        --cnt;
+                    &#125;
+                    ++l;
+                &#125;
+            &#125;
+        &#125;
+        return min_size &gt; s.size() ? &quot;&quot; : s.substr(min_l,min_size);
+    &#125;
+&#125;;
+</code></pre>
+<h2 id="3-6-练习"><a href="#3-6-练习" class="headerlink" title="3.6 练习"></a>3.6 练习</h2><h3 id="基础难度"><a href="#基础难度" class="headerlink" title="基础难度"></a>基础难度</h3><h3 id="633-Sum-of-Square-Numbers-Easy"><a href="#633-Sum-of-Square-Numbers-Easy" class="headerlink" title="633.Sum of Square Numbers(Easy)"></a><font orange>633.Sum of Square Numbers(Easy)</font></h3><h3 id="题目描述-13"><a href="#题目描述-13" class="headerlink" title="题目描述"></a>题目描述</h3><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
 
       
 
