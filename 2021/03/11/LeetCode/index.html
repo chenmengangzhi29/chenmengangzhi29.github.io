@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png">
 <meta property="og:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png">
 <meta property="article:published_time" content="2021-03-11T11:17:02.000Z">
-<meta property="article:modified_time" content="2021-04-29T14:18:35.246Z">
+<meta property="article:modified_time" content="2021-04-29T15:33:17.308Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png">
@@ -1034,7 +1034,29 @@ public:
 <p>  };</p>
 </li>
 </ul>
-<h1 id="第五章-千奇百怪的排序算法"><a href="#第五章-千奇百怪的排序算法" class="headerlink" title="第五章 千奇百怪的排序算法"></a>第五章 千奇百怪的排序算法</h1><h2 id="5-1-常用排序算法"><a href="#5-1-常用排序算法" class="headerlink" title="5.1 常用排序算法"></a>5.1 常用排序算法</h2><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
+<h1 id="第五章-千奇百怪的排序算法"><a href="#第五章-千奇百怪的排序算法" class="headerlink" title="第五章 千奇百怪的排序算法"></a>第五章 千奇百怪的排序算法</h1><h2 id="5-1-常用排序算法"><a href="#5-1-常用排序算法" class="headerlink" title="5.1 常用排序算法"></a>5.1 常用排序算法</h2><p>&ensp;&ensp;以下是一些最基本的排序算法。虽然在C++里可以通过std::sort()快速排序，而且刷题时很少需要自己手写排序算法，但是熟悉各种排序算法可以加深自己对算法的基本理解，以及解出由这些排序算法引申出来的题目。</p>
+<h3 id="快速排序（Quicksort"><a href="#快速排序（Quicksort" class="headerlink" title="快速排序（Quicksort)"></a>快速排序（Quicksort)</h3><p>左闭右闭的二分写法</p>
+<pre><code>void quick_sort(vector&lt;int&gt; &amp;nums, int l, int r)&#123;
+    if(l + 1 &gt;= r)&#123;
+        return;
+    &#125;
+    int first = l, last = r - 1, key = nums[first];
+    while(first &lt; last)&#123;
+        while(first &lt; last &amp;&amp; nums[last] &gt;= key)&#123;
+            --last;
+        &#125;
+        nums[first] = nums[last];
+        while(first &lt; last &amp;&amp; nums[first] &lt;= key)&#123;
+            ++first;
+        &#125;
+        nums[last] = nums[first];
+    &#125;
+    nums[first] = key;
+    quick_sort(nums,l,first);
+    quick_sort(nums,first + 1, r);
+&#125;
+</code></pre>
+<h3 id="归并排序（Merge-Sort"><a href="#归并排序（Merge-Sort" class="headerlink" title="归并排序（Merge Sort)"></a>归并排序（Merge Sort)</h3><h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p><a target="_blank" rel="noopener" href="https://chenmengangzhi29.github.io/">小黄</a><br>LeetCode 101: A LeetCode Grinding Guide(C++ Version).Chang Gao </p>
 
       
 
